@@ -21,6 +21,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
             aiListTarget
             targetPosition="nested"
             (dropping)="droppedNested.emit($event)"
+            (dragEnter)="dragEnterNested.emit($event)"
             (dragOver)="dragOverNested.emit($event)"
             [targetSize]="100"
           ></div>
@@ -28,12 +29,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
             aiListTarget
             targetPosition="above"
             (dropping)="droppedAbove.emit($event)"
+            (dragEnter)="dragEnterAbove.emit($event)"
             (dragOver)="dragOverAbove.emit($event)"
           ></div>
           <div
             aiListTarget
             targetPosition="below"
             (dropping)="droppedBelow.emit($event)"
+            (dragEnter)="dragEnterBelow.emit($event)"
             (dragOver)="dragOverBelow.emit($event)"
           ></div>
         </div>
@@ -67,9 +70,15 @@ export class AIListItemWrapperComponent {
 
   @Output() dragEnd = new EventEmitter<any>();
 
+  @Output() dragEnterAbove = new EventEmitter<any>();
+
   @Output() dragOverAbove = new EventEmitter<any>();
 
+  @Output() dragEnterBelow = new EventEmitter<any>();
+
   @Output() dragOverBelow = new EventEmitter<any>();
+
+  @Output() dragEnterNested = new EventEmitter<any>();
 
   @Output() dragOverNested = new EventEmitter<any>();
 

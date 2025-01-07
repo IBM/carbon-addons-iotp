@@ -60,8 +60,11 @@ export enum SelectionType {
           (droppedAbove)="handleDrop(data.parentItem, data.index)"
           (droppedBelow)="handleDrop(data.parentItem, data.index + 1)"
           (droppedNested)="handleDrop(data.item, 0)"
+          (dragEnterBelow)="handleDragOver($event, data.parentItem)"
           (dragOverBelow)="handleDragOver($event, data.parentItem)"
+          (dragEnterAbove)="handleDragOver($event, data.parentItem)"
           (dragOverAbove)="handleDragOver($event, data.parentItem)"
+          (dragEnterNested)="handleDragOver($event, data.item)"
           (dragOverNested)="handleDragOver($event, data.item)"
         >
           <ai-list-item
