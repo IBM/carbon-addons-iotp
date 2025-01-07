@@ -160,6 +160,7 @@ class HeaderActionMenu extends React.Component {
           ref={focusRef}
           testId="menuitem"
           aria-label={ariaLabel}
+          type="button"
           id={id}
         >
           <MenuContent ariaLabel={ariaLabel} />
