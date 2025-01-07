@@ -78,6 +78,7 @@ import { IconService } from 'carbon-components-angular';
             [ngClass]="{ 'iot--list-item--content--values--main__large': item.size === 'lg' }"
           >
             <div
+              title="{{ item.value }}"
               class="iot--list-item--content--values--value"
               [ngClass]="{
                 'iot--list-item--category': item.isCategory,
